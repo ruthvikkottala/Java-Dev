@@ -1,0 +1,34 @@
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Practise {
+
+	public static void main(String[] args) {
+		List<String> names = List.of("D1", "D2", "D3", "D4");
+		names.stream().forEach(name -> System.out.println(name));
+
+		// lambdas and Functional Interface
+		FunctionalInterfaceDemo demoObj = (Integer x, Integer y) -> {
+			if (FunctionalInterfaceDemo.checkNonNull(x) && FunctionalInterfaceDemo.checkNonNull(y))
+				System.out.println(x + y);
+			else
+				System.out.println("Check the values");
+
+		};
+		demoObj.calcSum(10, 290);
+
+		// predicate functional interface
+		Predicate<Integer> checkNonNull = i -> i != null;
+		Integer x = null;
+		System.out.println("The value '" + x + "' is non null : " + checkNonNull.test(x));
+
+		// predicate joining
+		Predicate<String> checkLength = s -> s.length() >= 5;
+		Predicate<String> checkEvenLength = s -> s.length() % 2 == 0;
+
+		System.out.println("Result after AND merge " + checkLength.and(checkEvenLength).test("Test String"));
+		System.out.println("Result after OR merge " + checkLength.or(checkEvenLength).test("Test String"));
+		System.out.println("Result after Negate " + checkEvenLength.negate().test("Test String"));
+
+	}
+}

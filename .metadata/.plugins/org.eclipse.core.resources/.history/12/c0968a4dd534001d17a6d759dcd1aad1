@@ -1,0 +1,41 @@
+interface DemoInterface  
+	{   
+	//default method   
+	default void display()   
+	{   
+	System.out.println("The dispaly() method invoked");   
+	}   
+	}   
+	//interface without default method  
+	interface DemoInterface1 extends DemoInterface  
+	{   
+		default void display()   
+		{   
+		System.out.println("Custom default implementation");   
+		} 
+	}   
+	//interface without default method  
+	interface DemoInterface2 extends DemoInterface  
+	{  
+		default void display()   
+		{   
+		System.out.println("Custom default2 implementation");   
+		}   
+	}   
+	//implementation class code   
+	public class DemoClass implements DemoInterface2, DemoInterface1  
+	{   
+	public static void main(String args[])   
+	{   
+	DemoClass obj = new DemoClass();   
+	//calling method  
+	obj.display();   
+	}
+
+	@Override
+	public void display() {
+		// TODO Auto-generated method stub
+		DemoInterface1.super.display();
+	}   
+	}  
+

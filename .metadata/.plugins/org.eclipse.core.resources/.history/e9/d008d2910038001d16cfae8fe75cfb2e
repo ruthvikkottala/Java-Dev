@@ -1,0 +1,26 @@
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Practise {
+
+	public static void main(String[] args) {
+		List<String> names = List.of("D1", "D2", "D3", "D4");
+		names.stream().forEach(name -> System.out.println(name));
+
+		// lambdas and Functional Interface
+		FunctionalInterfaceDemo demoObj = (Integer x, Integer y) -> {
+			if(FunctionalInterfaceDemo.checkNonNull(x) && FunctionalInterfaceDemo.checkNonNull(y))
+				System.out.println(x * y);
+			else
+				System.out.println("Check the values");
+			
+		};
+		demoObj.calcSum(10, 290);
+		
+		//predicate funtional interface
+		Predicate<Integer> checkNonNull = i->i!=null;
+		Integer x =10;
+		System.out.println("The value "+x+"is"+checkNonNull.test(x));
+		
+	}
+}

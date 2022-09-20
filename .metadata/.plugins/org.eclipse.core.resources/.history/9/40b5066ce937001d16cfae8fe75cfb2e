@@ -1,0 +1,5 @@
+@FunctionalInterface
+public interface FunctionalInterfaceDemo {
+
+	Integer calcSum(Integer x, Integer y);
+}

@@ -1,0 +1,13 @@
+
+public class TestImplementer implements TestFunctional{
+
+
+	@Override
+	public void printName() {
+		System.out.println("PRINT DEFAULT");
+	}
+	
+	public void printDefault() {
+		System.out.println("NOT default implementation");
+	}
+}

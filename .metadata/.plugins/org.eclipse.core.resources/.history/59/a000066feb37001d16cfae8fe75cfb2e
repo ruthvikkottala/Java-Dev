@@ -1,0 +1,9 @@
+@FunctionalInterface
+public interface FunctionalInterfaceDemo {
+
+	void calcSum(Integer x, Integer y);
+	
+	static void printStaticMethod() {
+		System.out.println("Static method in functional interface");
+	}
+}
