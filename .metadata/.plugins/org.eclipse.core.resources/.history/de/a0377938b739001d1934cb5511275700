@@ -62,8 +62,8 @@ public class StreamTerminalOperations {
 		Double avgAge = customers.stream().collect(Collectors.averagingInt(Customer::getAge));
 		System.out.println("Average of all ages -> " + avgAge);
 		
-//		Double avgAge2 = customers.stream().map(Customer::getAge).mapToDouble(i->i).average().getAsDouble();
-//		System.out.println("Average of all ages -> " + avgAge2);
+		Double avgAge2 = customers.stream().map(Customer::getAge).mapToDouble(i->i).average().getAsDouble();
+		System.out.println("Average of all ages -> " + avgAge2);
 		
 		// groupingBy()
 		Map<Integer, List<Customer>> ageMap =customers.stream().collect(Collectors.groupingBy(Customer::getAge));

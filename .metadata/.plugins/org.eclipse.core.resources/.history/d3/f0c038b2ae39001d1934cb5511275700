@@ -1,9 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -17,7 +15,7 @@ public class StreamTerminalOperations {
 		Customer c2 = new Customer("Ravi", 32, 12243d, Arrays.asList(12654324, 34653465));
 		Customer c3 = new Customer("Rahu", 34, 12345d, Arrays.asList(126543724, 346534665));
 		Customer c4 = new Customer("Rakul", 28, 12334d, Arrays.asList(128654324, 3465545));
-		Customer c5 = new Customer("Sam", 32, 12356d, Arrays.asList(126543264, 346531465));
+		Customer c5 = new Customer("Sam", 29, 12356d, Arrays.asList(126543264, 346531465));
 		Customer c6 = new Customer("Kelab", 30, 12367d, Arrays.asList(12654324, 34381465));
 		customers.addAll(Arrays.asList(c1, c2, c3, c4, c5, c6));
 
@@ -55,25 +53,12 @@ public class StreamTerminalOperations {
 
 		Integer ageSum = customers.stream().collect(Collectors.summingInt(Customer::getAge));
 		System.out.println("Sum of all ages -> " + ageSum);
-		
-//		Integer ageSum2 = customers.stream().map(Customer::getAge).reduce(0, (a,b)->a+b);
-//		System.out.println("Sum of all ages using reduce -> " + ageSum2);
 
 		Double avgAge = customers.stream().collect(Collectors.averagingInt(Customer::getAge));
 		System.out.println("Average of all ages -> " + avgAge);
-		
-//		Double avgAge2 = customers.stream().map(Customer::getAge).mapToDouble(i->i).average().getAsDouble();
-//		System.out.println("Average of all ages -> " + avgAge2);
-		
+
 		// groupingBy()
-		Map<Integer, List<Customer>> ageMap =customers.stream().collect(Collectors.groupingBy(Customer::getAge));
-		System.out.println("Age Map -> "+ ageMap);
-		
-		Map<Integer, List<String>> ageNameMap = customers.stream().collect(Collectors.groupingBy(Customer::getAge,Collectors.mapping(Customer::getName, Collectors.toList())));
-		System.out.println("Age Name Map -> "+ ageNameMap);
-		
-		Map<Integer, Long> ageCountMap= customers.stream().collect(Collectors.groupingBy(Customer::getAge, Hashtable::new, Collectors.counting()));
-		System.out.println("Age count Map -> "+ageCountMap);
+
 	}
 
 }
