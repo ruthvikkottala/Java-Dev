@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javaDemo.data.Customer;
+
+public class StreamsDemo {
+
+	public static void main(String[] args) {
+
+		List<Customer> customers = new ArrayList<>();
+		Customer c1 = new Customer("Ram", 30, 12345d);
+		Customer c2 = new Customer("Ravi", 32, 12243d);
+		Customer c3 = new Customer("Rahu", 34, 12345d);
+		Customer c4 = new Customer("Rakul", 30, 12334d);
+		Customer c5 = new Customer("Sam", 29, 12356d);
+		Customer c6 = new Customer("Kelab", 25, 12367d);
+		customers.addAll(Arrays.asList(c1, c2, c3, c4, c5, c6));
+		
+		// MAP
+		customers.stream().map(Customer::getName).forEach(System.out::print);
+	}
+
+}

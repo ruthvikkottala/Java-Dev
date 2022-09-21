@@ -1,0 +1,54 @@
+package javaDemo.data;
+
+import java.util.List;
+
+public class Customer {
+
+	private String name;
+
+	private Integer age;
+
+	private Double accNumber;
+
+	private List<Double> phoneNumbers;
+
+	public Customer(String name, Integer age, Double accNumber, List<Double> phoneNumbers) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.accNumber = accNumber;
+		this.phoneNumbers = phoneNumbers;
+	}
+
+	public List<Double> getPhoneNumbers() {
+		return phoneNumbers;
+	}
+
+	public void setPhoneNumbers(List<Double> phoneNumbers) {
+		this.phoneNumbers = phoneNumbers;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Double getAccNumber() {
+		return accNumber;
+	}
+
+	public void setAccNumber(Double accNumber) {
+		this.accNumber = accNumber;
+	}
+}
