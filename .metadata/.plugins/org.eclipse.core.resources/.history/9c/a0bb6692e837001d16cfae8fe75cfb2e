@@ -1,9 +1,0 @@
-@FunctionalInterface
-public interface TestFunctional {
-
-	void printName();
-	
-	default void printDefault() {
-		System.out.println("Default Implementation");
-	}
-}

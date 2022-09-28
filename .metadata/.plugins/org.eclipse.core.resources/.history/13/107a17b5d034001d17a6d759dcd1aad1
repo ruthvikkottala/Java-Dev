@@ -1,5 +1,0 @@
-
-public class TestImplementer {
-
-	TestFunctional function = ()->System.out.println("PRINT DEFAULT");
-}
